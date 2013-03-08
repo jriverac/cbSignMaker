@@ -12,6 +12,7 @@ DEC 11, 2012  Se corrigiÃ³ la secciÃ³n del EcoIcon.
 DEC 26, 2012  Se agrego el soporte para la fotografia. 
 ---------------------------------------------------------------------------------------------------
 -->
+<!-- INICIO DE LA FIRMA DE CORREO ELECTRONICO --------------------------------------------------- -->
 <p style="font-family:Arial, Helvetica, sans-serif">Saludos afectuosos / Kindest regards</p>
 <p style="min-width: 800px">
 <table width="100%" bgcolor="#00488f" cellpadding="0" cellspacing="0" style="background-image: url('http://www.cbacueducto.com.mx/images/mail_signature_background.png')">
@@ -21,9 +22,9 @@ DEC 26, 2012  Se agrego el soporte para la fotografia.
     <td rowspan="5" width="5px">&nbsp;</td>
 
     <td style="border-bottom:thin, solid, #FFFFFF"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #FFFFFF"><%= @employee.name %></span></td>
-    <td rowspan="5" width="100px"><img src="http://www.cbguadalajara.com/images/signatures/<%= @employee.userid %>.png" width="100px" height="100px"/></td>
+    <td rowspan="5" width="100px"><img src="http://www.cbacueducto.com.mx/images/signatures/<%= @employee.userid %>.png" width="100px" height="100px"/></td>
      <td rowspan="5" width="5px">&nbsp;</td>
-    <td rowspan="5" width="100px"><img alt="Utilice la camara de su tel&eacute;fono inteligente para leer la informaci&oacute;n de contacto en este c&oacute;digo." src="http://www.cbguadalajara.com/qrcodes/<%= @employee.userid %>.png" width="100%" height="100" moz-do-not-send="true"/></td>
+    <td rowspan="5" width="100px"><img alt="Utilice la camara de su tel&eacute;fono inteligente para leer la informaci&oacute;n de contacto en este c&oacute;digo." src="http://www.cbacueducto.com.mx/qrcodes/<%= @employee.userid %>.png" width="100%" height="100" moz-do-not-send="true"/></td>
      <td rowspan="5" width="5px">&nbsp;</td>
   </tr>
   <tr>
@@ -47,7 +48,8 @@ DEC 26, 2012  Se agrego el soporte para la fotografia.
 </p>
 <p align="justify" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#999999">Este mensaje de correo electr&oacute;nico y su contenido esta previsto solo para uso de los destinatarios agregados, y puede contener informaci&oacute;n que es privilegiada, confidencial y exima de cualquier penalidad aplicable por la ley. Si usted no es el destinatario al que va dirigido, o el agente responsable de la entrega de este correo electr&oacute;nico a cada uno de sus destinatarios, se le esta notificando que cualquier uso, diseminaci&oacute;n, distribuci&oacute;n, o copia de este comunicado esta estrictamente prohibido y en contra de la ley. Si usted recibi&oacute; este correo electr&oacute;nico por error, por favor notifiquelo al remitente reenviando este correo electr&oacute;nico o por tel&eacute;fono con el asunto: Borrar por error de destinatario.</p>
 <p align="justify" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#999999">THIS ELECTRONIC MAIL MESSAGE AND ITS CONTENTS ARE INTENDED ONLY FOR THE USE OF THE ADDRESSED RECIPIENT(S) AND MAY CONTAIN INFORMATION THAT IS PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM DISCLOSURE UNDER APPLICABLE LAW. IF YOU ARE NOT AN INTENDED RECIPIENT, OR THE AGENT RESPONSIBLE FOR DELIVERING THIS EMAIL TO THE INTENDED RECIPIENT(S), YOU ARE HEREBY NOTIFIED THAT ANY USE, DISSEMINATION, DISTRIBUTION, OR COPYING OF THIS COMMUNICATION IS STRICTLY FORBBIDEN AND MAY BE UNLAWFUL. IF YOU RECEIVED THIS EMAIL IN ERROR, PLEASE NOTIFY THE SENDER IMMEDIATELY BY REPLYING TO THIS EMAIL OR BY TELEPHONE, AND DELETE THE EMAIL SENT IN ERROR.</p>
-
+<!-- FIN DE LA FIRMA DE CORREO ELECTRONICO -------------------------------------------- -->
+<!--
 <p>
   <b>Userid:</b>
   <%= @employee.userid %>
@@ -82,7 +84,7 @@ DEC 26, 2012  Se agrego el soporte para la fotografia.
   <b>Radio:</b>
   <%= @employee.radio %>
 </p>
-
+-->
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
 <%= link_to 'Back', employees_path %>
