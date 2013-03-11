@@ -2,14 +2,16 @@
 <!--
 Coldwell Banker - eMail Signature
 Producido por: Qixi
-Version: 1.5
+Version: 2.0
 ===================================================================================================
 HISTORIAL DE CAMBIOS
 ===================================================================================================
 DEC 11, 2012  Se corrigiÃ³ la secciÃ³n del EcoIcon.
-        Se agrego el entrelineado y el color de fondo se des-saturÃ³.
-        Se fijÃ³ el ancho mÃ­nimo a 800px.
+              Se agrego el entrelineado y el color de fondo se des-saturÃ³.
+              Se fijÃ³ el ancho mÃ­nimo a 800px.
 DEC 26, 2012  Se agrego el soporte para la fotografia. 
+MAR 11, 2013    JR Se crea la aplicacion Signature Maker en Rails y se agrega el soporte para el 
+                servidor de Acueducto.
 ---------------------------------------------------------------------------------------------------
 -->
 <!-- INICIO DE LA FIRMA DE CORREO ELECTRONICO --------------------------------------------------- -->
@@ -30,7 +32,7 @@ DEC 26, 2012  Se agrego el soporte para la fotografia.
   </tr>
   <tr>
     <td><span style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size:10px; color: #ffffff"><strong>Director Comercial</strong>    
-    <% debugger %>   
+  
       <% if @employee.other_phone.length > 0 then %>
           &bull; Tel&eacute;fono: <%= @employee.other_phone %>
       <% end %>
