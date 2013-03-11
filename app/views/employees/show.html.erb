@@ -31,7 +31,7 @@ MAR 11, 2013    JR Se crea la aplicacion Signature Maker en Rails y se agrega el
      <td rowspan="5" width="5px">&nbsp;</td>
   </tr>
   <tr>
-    <td><span style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size:10px; color: #ffffff"><strong>Director Comercial</strong>    
+    <td><span style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size:10px; color: #ffffff"><strong><%= @employee.position %></strong>    
   
       <% if @employee.other_phone.length > 0 then %>
           &bull; Tel&eacute;fono: <%= @employee.other_phone %>
