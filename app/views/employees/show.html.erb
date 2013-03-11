@@ -29,7 +29,15 @@ DEC 26, 2012  Se agrego el soporte para la fotografia.
      <td rowspan="5" width="5px">&nbsp;</td>
   </tr>
   <tr>
-    <td><span style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size:10px; color: #ffffff"><strong>Director Comercial</strong> &bull; Tel&eacute;fono: (33) 3719-9053 &bull; Tel. Celul&aacute;r: (33) 1479-1268 &bull; eMail: <a style="text-decoration:none; color: #aaaaaa;" href="mailto:<%= @employee.userid %>@cbacueducto.com.mx"><%= @employee.userid %>@cbacueducto.com.mx</a></span></td>
+    <td><span style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size:10px; color: #ffffff"><strong>Director Comercial</strong>    
+    <% debugger %>   
+      <% if @employee.other_phone.length > 0 then %>
+          &bull; Tel&eacute;fono: <%= @employee.other_phone %>
+      <% end %>
+      <% if @employee.cell_phone.length > 0 then %>
+          &bull; Tel. Celul&aacute;r: <%= @employee.cell_phone %> 
+      <% end %>
+          &bull; eMail: <a style="text-decoration:none; color: #aaaaaa;" href="mailto:<%= @employee.userid %>@cbacueducto.com.mx"><%= @employee.userid %>@cbacueducto.com.mx</a></span></td>
   </tr>
   <tr>
     <td colspan="2"><span style="font-family: Champagne, Arial, Helvetica, sans-serif; font-size:28px; color:#FFFFFF">Coldwell Banker Acueducto</span>&nbsp;<span style="font-family: Champagne, Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF"></span>
