@@ -18,20 +18,20 @@ MAR 11, 2013    JR Se crea la aplicacion Signature Maker en Rails y se agrega el
 <!-- \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ -->
 <p style="font-family:Arial, Helvetica, sans-serif">Saludos afectuosos / Kindest regards</p>
 <p style="min-width: 800px">
-<table width="100%" bgcolor="#00488f" cellpadding="0" cellspacing="0" style="background-image: url('http://www.cbacueducto.com.mx/images/mail_signature_background.png')">
+<table width="100%" bgcolor="#ffffff" cellpadding="0" cellspacing="0" style="border: 1px solid black;">
   <tr>
   <td rowspan="5" width="5px">&nbsp;</td>
     <td width="100px" rowspan="5" ><img width="100px" height="100px" src="http://www.cbacueducto.com.mx/images/mail_signature_logo.png" alt="Coldwell Banker Acueducto" moz-do-not-send="true"/></td>
     <td rowspan="5" width="5px">&nbsp;</td>
 
-    <td style="border-bottom:thin, solid, #FFFFFF"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #FFFFFF"><%= @employee.name %></span></td>
+    <td style="border-bottom:thin, solid, #FFFFFF"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #00488f"><%= @employee.name %></span></td>
     <td rowspan="5" width="100px"><img src="http://www.cbacueducto.com.mx/images/signatures/<%= @employee.userid %>.png" width="100px" height="100px"/></td>
      <td rowspan="5" width="5px">&nbsp;</td>
     <td rowspan="5" width="100px"><img alt="Utilice la camara de su tel&eacute;fono inteligente para leer la informaci&oacute;n de contacto en este c&oacute;digo." src="http://www.cbacueducto.com.mx/qrcodes/<%= @employee.userid %>.png" width="100%" height="100" moz-do-not-send="true"/></td>
      <td rowspan="5" width="5px">&nbsp;</td>
   </tr>
   <tr>
-    <td><span style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size:10px; color: #ffffff"><strong><%= @employee.position %></strong>    
+    <td><span style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size:10px; color: #00488f"><strong><%= @employee.position %></strong>    
   
       <% if @employee.other_phone.length > 0 then %>
           &bull; Tel&eacute;fono: <%= @employee.other_phone %>
@@ -42,14 +42,14 @@ MAR 11, 2013    JR Se crea la aplicacion Signature Maker en Rails y se agrega el
           &bull; eMail: <a style="text-decoration:none; color: #aaaaaa;" href="mailto:<%= @employee.userid %>@cbacueducto.com.mx"><%= @employee.userid %>@cbacueducto.com.mx</a></span></td>
   </tr>
   <tr>
-    <td><span style="font-family: Champagne, Arial, Helvetica, sans-serif; font-size:28px; color:#FFFFFF">Coldwell Banker Acueducto</span>&nbsp;<span style="font-family: Champagne, Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF"></span>
+    <td><span style="font-family: Champagne, Arial, Helvetica, sans-serif; font-size:28px; color:#00488f">Coldwell Banker Acueducto</span>&nbsp;<span style="font-family: Champagne, Arial, Helvetica, sans-serif; font-size:12px; color:#00488f"></span>
     </td>
   </tr>
   <tr>
-    <td><span style="font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#ffffff"><strong><a href="http://www.cbacueducto.com.mx" style="text-decoration:none; color: #aaaaaa;">http://www.cbacueducto.com.mx</a></strong> &bull; Tel&eacute;fono: +52 (33) 3611-3397</span></td>
+    <td><span style="font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#00488f"><strong><a href="http://www.cbacueducto.com.mx" style="text-decoration:none; color: #aaaaaa;">http://www.cbacueducto.com.mx</a></strong> &bull; Tel&eacute;fono: +52 (33) 3611-3397</span></td>
   </tr>
     <tr>
-    <td><span style="font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#ffffff">Avenida Real Acueducto 360-A, 3er. Piso &bull; Colonia Puerta de Hierro &bull; Zapop&aacute;n &bull; Jalisco, 45116</span></td>
+    <td><span style="font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#00488f">Avenida Real Acueducto 360-A, 3er. Piso &bull; Colonia Puerta de Hierro &bull; Zapop&aacute;n &bull; Jalisco, 45116</span></td>
   </tr>
   <tr style="background-image: url('http://www.cbacueducto.com.mx/images/medium_blue_linen.jpg');"><td colspan="8">&nbsp;</td></tr>
 </table>
