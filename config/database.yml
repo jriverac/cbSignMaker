@@ -4,10 +4,11 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 common: &common
-  adapter: postgresql
-  host: localhost
-  username: simp
-  password: nd04spd # from psql setup, see Postgresql
+    adapter: sqlite3
+    database: db/production.sqlite3
+    pool: 5
+    timeout: 5000
+
 
 development:
   <<: *common
@@ -23,7 +24,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+    adapter: postgresql
+    host: localhost
+    username: simp
+    password: nd04spd # from psql setup, see Postgresql
