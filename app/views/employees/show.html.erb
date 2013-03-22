@@ -35,12 +35,12 @@ MAR 11, 2013    JR Se crea la aplicacion Signature Maker en Rails y se agrega el
     <td width="200px" rowspan="5" ><img width="200px" height="100px" src="http://www.cbacueducto.com.mx/images/mail_signature_logo.png" alt="Coldwell Banker Acueducto" moz-do-not-send="true"/></td>
     <td rowspan="5" width="5px">&nbsp;</td>
 
-    <td style="border-bottom: 1px solid #00488f"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #00488f"><%= @employee.name %></span></td>
-    <td rowspan="5" width="100px"><div style="position: relative"><div id="picture" style="border: 3px solid #ffffff; background-image: url('http://www.cbacueducto.com.mx/images/signatures/<%= @employee.userid %>.png'); height: 136px; width: 118px; position: absolute; top: -10px; left: -20px; box-shadow: 3px 3px 4px #999999; -moz-box-shadow: 3px 3px 4px #999999; -webkit-box-shadow: 3px 3px 4px #999999;transform: rotate(5deg);
+    <td style="border-bottom: 1px solid #00488f"><br/><span style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #00488f"><%= @employee.name %></span></td>
+    <td rowspan="5" width="100px"><div style="position: relative"><div id="picture" style="border: 3px solid #ffffff; background-image: url('http://www.cbacueducto.com.mx/images/signatures/<%= @employee.userid %>.png'); height: 136px; width: 118px; position: absolute; top: -60px; left: -20px; box-shadow: 3px 3px 4px #999999; -moz-box-shadow: 3px 3px 4px #999999; -webkit-box-shadow: 3px 3px 4px #999999;transform: rotate(5deg);
     -ms-transform: rotate(5deg); /* IE 9 */
     -webkit-transform: rotate(5deg); /* Safari and Chrome */
     -o-transform: rotate(5deg); /* Opera */
-    -moz-transform: rotate(5deg); /* Firefox */"></div></div><img src="http://www.cbacueducto.com.mx/images/signatures/<%= @employee.userid %>.png" height="100px"/></td>
+    -moz-transform: rotate(5deg); /* Firefox */"></div></div></td>
      <td rowspan="5" width="5px">&nbsp;</td>
     <td rowspan="5" width="100px"><img alt="Utilice la camara de su tel&eacute;fono inteligente para leer la informaci&oacute;n de contacto en este c&oacute;digo." src="http://chart.apis.google.com/chart?cht=qr&chs=400x400&chl=<%= str.to_uri%>" width="100%" height="100" moz-do-not-send="true"/></td>
      <td rowspan="5" width="5px">&nbsp;</td>
