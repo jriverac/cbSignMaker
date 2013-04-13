@@ -2,17 +2,6 @@
 <!--
 Coldwell Banker - eMail Signature
 Producido por: Qixi
-Version: 2.0
-===================================================================================================
-HISTORIAL DE CAMBIOS
-===================================================================================================
-DEC 11, 2012  Se corrigiÃ³ la secciÃ³n del EcoIcon.
-              Se agrego el entrelineado y el color de fondo se des-saturÃ³.
-              Se fijÃ³ el ancho mÃ­nimo a 800px.
-DEC 26, 2012  Se agrego el soporte para la fotografia. 
-MAR 11, 2013    JR Se crea la aplicacion Signature Maker en Rails y se agrega el soporte para el 
-                servidor de Acueducto.
----------------------------------------------------------------------------------------------------
 -->
 <!-- INICIO DE LA FIRMA DE CORREO ELECTRONICO --------------------------------------------------- -->
 <%
@@ -22,6 +11,7 @@ MAR 11, 2013    JR Se crea la aplicacion Signature Maker en Rails y se agrega el
     str = str + "TITLE:" + @employee.position + "\n"
     str = str + "ORG:Coldwell Banker Acueducto" + "\n"
     str = str + "TEL;TYPE=WORK,VOICE:(33) 3611-3397" + "\n"
+    str = str + "TEL;TYPE=CELL,VOICE:" + @employee.cell_phone + "\n"
     str = str + "EMAIL;TYPE=PREF,INTERNET:" + @employee.userid + "@cbacueducto.com.mx" + "\n"
     str = str + "END:VCARD"
 
@@ -55,7 +45,10 @@ MAR 11, 2013    JR Se crea la aplicacion Signature Maker en Rails y se agrega el
           &bull; Tel. Celul&aacute;r: <%= @employee.cell_phone %> 
       <% end %>
       <% if @employee.nextel.length > 0 then %>
-          &bull; Tel. Nextel Id: <%= @employee.nextel %> 
+          &bull; Nextel: <%= @employee.nextel %> 
+      <% end %>      
+      <% if @employee.radio.length > 0 then %>
+          &bull; Nextel ID: <%= @employee.radio %> 
       <% end %>
           &bull; eMail: <a style="text-decoration:none; color: #000000;" href="mailto:<%= @employee.userid %>@cbacueducto.com.mx"><%= @employee.userid %>@cbacueducto.com.mx</a></span></td>
   </tr>
