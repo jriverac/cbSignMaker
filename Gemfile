@@ -37,5 +37,7 @@ gem 'jquery-rails'
 
 gem 'uri-handler'
 
+gem 'sanitize'
+
 # To use debugger
 gem 'debugger'
