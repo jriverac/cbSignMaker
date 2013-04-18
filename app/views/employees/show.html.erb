@@ -5,8 +5,8 @@
 <%
     str = "BEGIN:VCARD" + "\n"
     str = str + "VERSION:3.0" + "\n"
-    str = str + "N:" + @employee.name + "\n"
-    str = str + "TITLE:" + @employee.position + "\n"
+    str = str + "N:" + Sanitize.clean(@employee.name).mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').to_s + "\n"
+    str = str + "TITLE:" + Sanitize.clean(@employee.position).mb_chars.normalize(:kd).gsub(/[^\x00-\x7F]/n,'').to_s + "\n"
     str = str + "ORG:Coldwell Banker Acueducto" + "\n"
     str = str + "TEL;TYPE=WORK,VOICE:(33) 3611-3397" + "\n"
     str = str + "TEL;TYPE=CELL,VOICE:" + @employee.cell_phone + "\n"
@@ -23,7 +23,7 @@
     <td width="200px" rowspan="5" ><img width="200px" height="100px" src="http://www.cbacueducto.com.mx/images/mail_signature_logo.png" alt="Coldwell Banker Acueducto" moz-do-not-send="true"/></td>
     <td rowspan="5" width="5px">&nbsp;</td>
 
-    <td style="border-bottom: 1px solid #00488f"><br/><span style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #00488f"><%= Sanitize.clean  @employee.name %></span></td>
+    <td style="border-bottom: 1px solid #00488f"><br/><span style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #00488f"><%= raw @employee.name%> </span></td>
     <td rowspan="5" width="100px">
         <% if @employee.hide_picture != 1 %><div style="position: relative"><div id="picture" style="border: 3px solid #ffffff; background-image: url('http://www.cbacueducto.com.mx/images/signatures/<%= @employee.userid %>.png'); height: 136px; width: 118px; position: absolute; top: -60px; left: -20px; box-shadow: 3px 3px 4px #999999; -moz-box-shadow: 3px 3px 4px #999999; -webkit-box-shadow: 3px 3px 4px #999999;transform: rotate(5deg);
     -ms-transform: rotate(5deg); /* IE 9 */
@@ -35,7 +35,7 @@
      <td rowspan="5" width="5px">&nbsp;</td>
   </tr>
   <tr>
-    <td><span style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size:12px; color: #00488f"><strong><%= Sanitize.clean @employee.position %></strong></span><span style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size:10px; color: #00488f">    
+    <td><span style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size:12px; color: #00488f"><strong><%= raw @employee.position %></strong></span><span style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size:10px; color: #00488f">    
   
       <% if @employee.other_phone.length > 0 then %>
           &bull; Tel&eacute;fono: <%= @employee.other_phone %>

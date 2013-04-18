@@ -12,38 +12,38 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :userid %><br />
+    <%= f.label :userid, "Nombre de usuario (UserId)" %><br />
     <%= f.text_field :userid %>
   </div>
   <div class="field">
-    <%= f.label :hide_picture %><br/>
+    <%= f.label :hide_picture, "Ocultar Fotografia"%><br/>
     <%= f.select :hide_picture, [['No',0],['Si',1]] %>
     </div>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Nombre:" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :position %><br />
+    <%= f.label :position, "Puesto:" %><br />
     <%= f.text_field :position %>
   </div>
-  <div class="field">
+  <div class="field", "Otro Teléfono:">
     <%= f.label :other_phone %><br />
     <%= f.text_field :other_phone %>
   </div>
   <div class="field">
-    <%= f.label :cell_phone %><br />
+    <%= f.label :cell_phone, "C&eacute;lular" %><br />
     <%= f.text_field :cell_phone %>
   </div>
-  <div class="field">
+  <div class="field", "Nextel:">
     <%= f.label :nextel %><br />
     <%= f.text_field :nextel %>
   </div>
-  <div class="field">
+  <div class="field", "Nextel ID:">
     <%= f.label :radio %><br />
     <%= f.text_field :radio %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Aceptar" %>
   </div>
 <% end %>

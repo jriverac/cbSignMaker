@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-
+        include ERB::Util
 
   # GET /employees
   # GET /employees.json
@@ -42,7 +42,16 @@ class EmployeesController < ApplicationController
   # POST /employees
   # POST /employees.json
   def create
+      require 'nokogiri'
     @employee = Employee.new(params[:employee])
+    doc = Nokogiri::HTML::Document.new
+    doc.encoding = 'UTF-8'
+    
+    node = doc.fragment(params[:employee][:position])
+    @employee.position = node.to_html(encoding:'US-ASCII')
+    
+    node = doc.fragment(params[:employee][:name])
+    @employee.name = node.to_html(encoding: 'US-ASCII')
 
     respond_to do |format|
       if @employee.save
@@ -55,21 +64,33 @@ class EmployeesController < ApplicationController
     end
   end
 
-  # PUT /employees/1
-  # PUT /employees/1.json
-  def update
-    @employee = Employee.find(params[:id])
+    # PUT /employees/1
+    # PUT /employees/1.json
+    def update
+        require 'nokogiri'
+        
+        @employee = Employee.find(params[:id])
+        doc = Nokogiri::HTML::Document.new
+        doc.encoding = 'UTF-8'
+        
+        node = doc.fragment(params[:employee][:position])
+        params[:employee][:position] = node.to_html(encoding:'US-ASCII')
+        
+        node = doc.fragment(params[:employee][:name])
+        params[:employee][:name] = node.to_html(encoding: 'US-ASCII')
 
-    respond_to do |format|
-      if @employee.update_attributes(params[:employee])
-        format.html { redirect_to @employee, notice: 'Employee was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @employee.errors, status: :unprocessable_entity }
-      end
+
+        respond_to do |format|
+            if @employee.update_attributes(params[:employee])
+                
+                format.html { redirect_to @employee, notice: 'Se ha actualizado correctamente.' }
+                format.json { head :no_content }
+            else
+                format.html { render action: "edit" }
+                format.json { render json: @employee.errors, status: :unprocessable_entity }
+            end
+        end
     end
-  end
 
   # DELETE /employees/1
   # DELETE /employees/1.json

@@ -3,30 +3,20 @@
 <div>
 <table border="1" width="100%   ">
   <tr>
-    <th>Userid</th>
-    <th>Name</th>
-    <th>Position</th>
-    <th>Other phone</th>
-    <th>Cell phone</th>
-    <th>Nextel</th>
-    <th>Radio</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Usuario</th>
+    <th>Nombre</th>
+    <th>Puesto</th>
+    <th colspan="2">Acciones</th>
+
   </tr>
 
 <% @employees.each do |employee| %>
   <tr>
-    <td><img src="http://www.cbacueducto.com.mx/images/signatures/<%= employee.userid %>.png"/></td>
-    <td><%= employee.name %></td>
-    <td><%= employee.position %></td>
-    <td><%= employee.other_phone %></td>
-    <td><%= employee.cell_phone %></td>
-    <td><%= employee.nextel %></td>
-    <td><%= employee.radio %></td>
-    <td><%= link_to 'Show', employee %></td>
-    <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-    <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td align="center"><img src="http://www.cbacueducto.com.mx/images/signatures/<%= employee.userid %>.png"/></td>
+    <td><%= link_to raw(employee.name), employee %></td>
+    <td><%= raw(employee.position) %></td>
+    <td align="center"><%= link_to 'Editar', edit_employee_path(employee) %></td>
+    <td align="center"><%= link_to 'Eliminar', employee, method: :delete, data: { confirm: 'Estas seguro de que deseas borrar este recurso?' } %></td>
   </tr>
 <% end %>
 </table>

@@ -39,5 +39,7 @@ gem 'uri-handler'
 
 gem 'sanitize'
 
+gem 'nokogiri'
+
 # To use debugger
 gem 'debugger'
