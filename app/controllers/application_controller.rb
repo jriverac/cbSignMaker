@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 	
 
   	protect_from_forgery
-    USERS = { "jriverac" => "safe4mat" }
+    USERS = { "c0ldw311" => "tUl@tra35" }
 
       before_filter :authenticate
       private
