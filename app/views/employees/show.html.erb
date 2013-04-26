@@ -15,6 +15,7 @@
 
 %>
 <!-- \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ -->
+<% if @employee.foroutlook == 0%>
 <p style="font-family:Arial, Helvetica, sans-serif">Saludos afectuosos / Kindest regards</p>
 <p style="min-width: 800px">
 <table width="100%" bgcolor="#ffffff" cellpadding="0" cellspacing="0" style="border: 1px solid #999999; background-image: url('http://www.cbacueducto.com.mx/images/signatures/signature_background.png');background-repeat: repeat-x; ">
@@ -67,12 +68,61 @@
 </p>
 
 
-<p align="justify" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#999999"><strong>Aviso de Privacidad de Correo Electrónico:</strong><br/>
-La informaci&oacute;n contenida en este correo electr&oacute;nico y anexos es confidencial y propiedad de Coldwell Banker Acueducto. Está dirigida &uacute;nicamente para el uso del individuo o entidad a la que fue dirigida y puede contener informaci&oacute;n propietaria que no es del dominio p&uacute;blico. Si has recibido este correo por error o no eres el destinatario al que fue enviado, por favor notifica al remitente de inmediato y borra este mensaje de tu computadora. Cualquier uso, distribuci&oacute;n de este correo que no sea por el destinatario de intenci&oacute;n, queda prohibido.</p>
-<p align="justify" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#999999"><strong>Privacy Notice e-mail:</strong><br/>
-The information contained in this email and annexes is proprietary and confidential to Coldwell Banker Acueducto. It is intended solely for the use of the individual or entity to which it was addressed and may contain proprietary information that is not in the public domain. If you have received this email by mistake or you're not the recipient to which it was sent, please notify the sender immediately and delete this message from your computer
-</p>
+<%= render 'privacy'%>
 
+<% else %>
+
+
+    <p style="font-family:Arial, Helvetica, sans-serif">Saludos afectuosos / Kindest regards</p>
+    <p style="min-width: 800px">
+    <table width="100%" bgcolor="#ffffff" cellpadding="0" cellspacing="0" style="border: 1px solid #999999;">
+      <tr>
+      <td rowspan="5" width="5px">&nbsp;</td>
+        <td width="200px" rowspan="5"><img width="200px" height="100px" src="http://www.cbacueducto.com.mx/images/mail_signature_logo.png" alt="Coldwell Banker Acueducto" moz-do-not-send="true"/></td>
+        <td rowspan="5" width="5px">&nbsp;</td>
+
+        <td style="border-bottom: 1px solid #00488f"  width="100%"><br/><span style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #00488f"><%= raw @employee.name %></span></td>
+        <td rowspan="5" width="100px"><% if @employee.hide_picture != 1 %>
+            <img src="http://www.cbacueducto.com.mx/images/signatures/<%= @employee.userid %>.png" height="136" width="118"/><% end %></td>
+         <td rowspan="5" width="5px">&nbsp;</td>
+        <td rowspan="5" width="100px"><img alt="Utilice la camara de su tel&eacute;fono inteligente para leer la informaci&oacute;n de contacto en este c&oacute;digo." src="http://chart.apis.google.com/chart?cht=qr&chs=400x400&chl=<%= str.to_uri%>" width="150" height="150" moz-do-not-send="true"/></td>
+         <td rowspan="5" width="5px">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><span style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size:12px; color: #00488f"><strong><%= raw @employee.position %></strong></span><span style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-size:10px; color: #00488f">    
+
+              <% if @employee.other_phone.length > 0 then %>
+                  &bull; Tel&eacute;fono: <%= @employee.other_phone %>
+              <% end %>
+              <% if @employee.cell_phone.length > 0 then %>
+                  &bull; Tel. Celul&aacute;r: <%= @employee.cell_phone %> 
+              <% end %>
+              <% if @employee.nextel.length > 0 then %>
+                  &bull; Nextel: <%= @employee.nextel %> 
+              <% end %>      
+              <% if @employee.radio.length > 0 then %>
+                  &bull; Nextel ID: <%= @employee.radio %> 
+              <% end %>
+              &bull; eMail: <a style="text-decoration:none; color: #000000;" href="mailto:rvega@cbacueducto.com.mx"><%= @employee.userid %>@cbacueducto.com.mx</a></span></td>
+      </tr>
+      <tr>
+        <td><span style="font-family: Champagne, Arial, Helvetica, sans-serif; font-size: 18px; color:#00488f">Coldwell Banker Acueducto&reg;</span>&nbsp;<span style="font-family: Champagne, Arial, Helvetica, sans-serif; font-size:12px; color:#00488f">Lo que los Bienes Ra&iacute;ces deben ser</span>
+        </td>
+      </tr>
+      <tr>
+        <td><span style="font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#00488f"><strong><a href="http://www.cbacueducto.com.mx" style="text-decoration:none; color: #000000;">http://www.cbacueducto.com.mx</a></strong> &bull; Tel&eacute;fono: +52 (33) 3611-3397</span></td>
+      </tr>
+        <tr><td><span style="font-family: Arial, Helvetica, sans-serif; font-size:10px; color:#00488f">Avenida Real Acueducto 360-A, 3er. Piso &bull; Colonia Puerta de Hierro &bull; Zapopan &bull; Jalisco, 45116</span></td></tr>
+      <tr bgcolor="#416496"><td colspan="8">&nbsp;</td></tr>
+    </table>
+    </p>
+    <p>
+    <table><tr><td><img align="right" src="http://www.cbacueducto.com.mx/images/ecoicon.png" moz-do-not-send="true"/></td><td><p align="left" valign="middle" style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#006600">No imprimir si no es necesario.<br/>Hay que proteger el Medio Ambiente.</p></td></tr></table>
+    </p>
+
+    <%= render 'privacy'%>
+
+<% end %>
 
 <!-- \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ -->
 <!-- FIN DE LA FIRMA DE CORREO ELECTRONICO -------------------------------------------- -->

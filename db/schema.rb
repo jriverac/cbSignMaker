@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130413003539) do
+ActiveRecord::Schema.define(:version => 20130426024259) do
 
   create_table "clients", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20130413003539) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "hide_picture"
+    t.integer  "foroutlook"
   end
 
   create_table "signatures", :force => true do |t|

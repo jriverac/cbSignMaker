@@ -22,6 +22,11 @@ En esta pantalla pudes agregar los datos de los usuarios para la creación de su
     <%= f.label :hide_picture, "Ocultar Fotografia"%><br/>
     <%= f.select :hide_picture, [['No',0],['Si',1]] %>
     </div>
+    
+    <div class="field">
+      <%= f.label :foroutlook, "Formato de Outlook"%><br/>
+      <%= f.select :foroutlook, [['No',0],['Si',1]] %>
+      </div>
   <div class="field">
     <%= f.label :name, "Nombre:" %><br />
     <%= f.text_field :name %>
